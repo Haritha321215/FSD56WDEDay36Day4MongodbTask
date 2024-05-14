@@ -1,0 +1,677 @@
+test> use fsd56wde-zenclass
+Users
+	fsd56wde-zenclass> db.users.find()
+	[
+	  {
+	    _id: ObjectId('66435f9a331cba0c2d9f990a'),
+	    name: 'Haritha',
+	    email: 'haritha@gmail.com',
+	    role: 'student'
+	  },
+	  {
+	    _id: ObjectId('66435f9a331cba0c2d9f990b'),
+	    name: 'sujitha',
+	    email: 'sujitha@gmail.com',
+	    role: 'mentor'
+	  },
+	  {
+	    _id: ObjectId('66436f80331cba0c2d9f991a'),
+	    name: 'stu2',
+	    email: 'stu2@gmail.com',
+	    role: 'student'
+	  },
+	  {
+	    _id: ObjectId('66436f80331cba0c2d9f991b'),
+	    name: 'stu1',
+	    email: 'stu1@gmail.com',
+	    role: 'student'
+	  },
+	  {
+	    _id: ObjectId('66436f9b331cba0c2d9f991c'),
+	    name: 'stu4',
+	    email: 'stu4@gmail.com',
+	    role: 'student'
+	  },
+	  {
+	    _id: ObjectId('66436f9b331cba0c2d9f991d'),
+	    name: 'stu3',
+	    email: 'stu3@gmail.com',
+	    role: 'student'
+	  }
+	]
+	
+attendance
+	fsd56wde-zenclass> db.attendance.find()
+	[
+	  {
+	    _id: ObjectId('66436099331cba0c2d9f990c'),
+	    user_id: ObjectId('66435f9a331cba0c2d9f990a'),
+	    date: ISODate('2023-10-10T08:00:00.000Z'),
+	    status: 'present'
+	  },
+	  {
+	    _id: ObjectId('66436099331cba0c2d9f990d'),
+	    user_id: ObjectId('66435f9a331cba0c2d9f990a'),
+	    date: ISODate('2023-10-11T08:00:00.000Z'),
+	    status: 'absent'
+	  },
+	  {
+	    _id: ObjectId('66436ec9331cba0c2d9f9919'),
+	    user_id: ObjectId('66436099331cba0c2d9f990c'),
+	    drive_date: ISODate('2023-10-16T10:00:00.000Z'),
+	    status: 'present'
+	  },
+	  {
+	    _id: ObjectId('6643708b331cba0c2d9f991e'),
+	    user_id: ObjectId('66436f80331cba0c2d9f991a'),
+	    drive_date: ISODate('2023-10-16T10:00:00.000Z'),
+	    status: 'present'
+	  },
+	  {
+	    _id: ObjectId('6643708b331cba0c2d9f991f'),
+	    user_id: ObjectId('66436f80331cba0c2d9f991b'),
+	    drive_date: ISODate('2023-10-16T10:00:00.000Z'),
+	    status: 'absent'
+	  },
+	  {
+	    _id: ObjectId('6643708b331cba0c2d9f9920'),
+	    user_id: ObjectId('66436f9b331cba0c2d9f991c'),
+	    drive_date: ISODate('2023-10-20T09:00:00.000Z'),
+	    status: 'present'
+	  },
+	  {
+	    _id: ObjectId('6643708b331cba0c2d9f9921'),
+	    user_id: ObjectId('66436f9b331cba0c2d9f991c'),
+	    drive_date: ISODate('2023-10-20T09:00:00.000Z'),
+	    status: 'present'
+	  },
+	  {
+	    _id: ObjectId('66437d6b331cba0c2d9f994e'),
+	    user_id: ObjectId('66436f80331cba0c2d9f991a'),
+	    date: ISODate('2020-10-15T00:00:00.000Z'),
+	    status: 'absent'
+	  },
+	  {
+	    _id: ObjectId('66437d6b331cba0c2d9f994f'),
+	    user_id: ObjectId('66436f9b331cba0c2d9f991d'),
+	    date: ISODate('2020-10-20T00:00:00.000Z'),
+	    status: 'absent'
+	  }
+	]
+	
+
+Topics
+	fsd56wde-zenclass> db.topics.find()
+	[
+	  {
+	    _id: ObjectId('664361d9331cba0c2d9f990e'),
+	    title: 'Introduction to MongoDB',
+	    description: 'Basics of MongoDB',
+	    date: ISODate('2023-10-05T08:00:00.000Z'),
+	    mentor_id: ObjectId('605c72dfbb7a9d1d88fbd8b8')
+	  },
+	  {
+	    _id: ObjectId('664361d9331cba0c2d9f990f'),
+	    title: 'Advanced MongoDB',
+	    description: 'Advanced concepts of MongoDB',
+	    date: ISODate('2023-10-20T08:00:00.000Z'),
+	    mentor_id: ObjectId('605c72dfbb7a9d1d88fbd8b8')
+	  }
+	]
+	
+Tasks
+
+	fsd56wde-zenclass> db.tasks.find()
+	[
+	  {
+	    _id: ObjectId('66436307331cba0c2d9f9910'),
+	    title: 'MongoDB CRUD Operations',
+	    description: 'Tasks related to MongoDB CRUD operations',
+	    due_date: ISODate('2023-10-15T08:00:00.000Z'),
+	    assigned_to: ObjectId('605c72dfbb7a9d1d88fbd8b7'),
+	    status: 'completed'
+	  },
+	  {
+	    _id: ObjectId('66436307331cba0c2d9f9911'),
+	    title: 'Aggregation Framework',
+	    description: 'Tasks related to MongoDB Aggregation Framework',
+	    due_date: ISODate('2023-10-25T08:00:00.000Z'),
+	    assigned_to: ObjectId('605c72dfbb7a9d1d88fbd8b7'),
+	    status: 'pending'
+	  },
+	  {
+	    _id: ObjectId('66437df2331cba0c2d9f9950'),
+	    user_id: ObjectId('66436f80331cba0c2d9f991a'),
+	    due_date: ISODate('2020-10-20T00:00:00.000Z'),
+	    submitted: false
+	  },
+	  {
+	    _id: ObjectId('66437df2331cba0c2d9f9951'),
+	    user_id: ObjectId('66436f9b331cba0c2d9f991d'),
+	    due_date: ISODate('2020-10-25T00:00:00.000Z'),
+	    submitted: false
+	  }
+	]
+	
+Company Drives
+	fsd56wde-zenclass> db.company_drives.find()
+	[
+	  {
+	    _id: ObjectId('66436349331cba0c2d9f9912'),
+	    company_name: 'Tech Corp',
+	    drive_date: ISODate('2023-11-01T08:00:00.000Z'),
+	    positions: [ 'Software Engineer', 'Data Analyst' ]
+	  },
+	  {
+	    _id: ObjectId('6643685a331cba0c2d9f9915'),
+	    company_name: 'Tech Innovators',
+	    drive_date: ISODate('2020-10-16T10:00:00.000Z'),
+	    positions: [ 'Software Engineer', 'Data Scientist' ],
+	    location: 'San Francisco, CA'
+	  },
+	  {
+	    _id: ObjectId('6643685a331cba0c2d9f9916'),
+	    company_name: 'Future Solutions',
+	    drive_date: ISODate('2020-10-20T09:00:00.000Z'),
+	    positions: [ 'DevOps Engineer', 'System Administrator' ],
+	    location: 'New York, NY'
+	  },
+	  {
+	    _id: ObjectId('6643685a331cba0c2d9f9917'),
+	    company_name: 'AI Pioneers',
+	    drive_date: ISODate('2020-10-25T11:00:00.000Z'),
+	    positions: [ 'Machine Learning Engineer', 'AI Researcher' ],
+	    location: 'Boston, MA'
+	  },
+	  {
+	    _id: ObjectId('6643685a331cba0c2d9f9918'),
+	    company_name: 'Web Creators',
+	    drive_date: ISODate('2020-10-30T14:00:00.000Z'),
+	    positions: [ 'Frontend Developer', 'Backend Developer' ],
+	    location: 'Seattle, WA'
+	  }
+	]
+	
+
+ Mentors
+	fsd56wde-zenclass> db.mentors.find()
+	[
+	  {
+	    _id: ObjectId('664363a9331cba0c2d9f9913'),
+	    name: 'sujitha',
+	    email: 'sujitha@gmail.com',
+	    expertise: [ 'MongoDB', 'Node.js' ]
+	  },
+	  {
+	    _id: ObjectId('664375aa331cba0c2d9f992a'),
+	    name: 'Eve',
+	    email: 'eve@example.com',
+	    expertise: 'Software Development'
+	  },
+	  {
+	    _id: ObjectId('664375aa331cba0c2d9f992b'),
+	    name: 'Frank',
+	    email: 'frank@example.com',
+	    expertise: 'Data Science'
+	  },
+	  {
+	    _id: ObjectId('664375aa331cba0c2d9f992c'),
+	    name: 'Grace',
+	    email: 'grace@example.com',
+	    expertise: 'Web Development'
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f993c'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('664374dd331cba0c2d9f9927')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f993d'),
+	    mentor_id: ObjectId('664375aa331cba0c2d9f992a'),
+	    mentee_id: ObjectId('664374dd331cba0c2d9f9928')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f993e'),
+	    mentor_id: ObjectId('664375aa331cba0c2d9f992a'),
+	    mentee_id: ObjectId('664374dd331cba0c2d9f9929')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f993f'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('66437659331cba0c2d9f992d')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f9940'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('66437659331cba0c2d9f992e')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f9941'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('66437659331cba0c2d9f992f')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f9942'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('66437683331cba0c2d9f9930')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f9943'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('66437683331cba0c2d9f9931')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f9944'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('66437683331cba0c2d9f9932')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f9945'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('664376a2331cba0c2d9f9933')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f9946'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('664376a2331cba0c2d9f9934')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f9947'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('664376a2331cba0c2d9f9935')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f9948'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('664376c6331cba0c2d9f9936')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f9949'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('664376c6331cba0c2d9f9937')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f994a'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('664376c6331cba0c2d9f9938')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f994b'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('664376e6331cba0c2d9f9939')
+	  }
+	]
+	Type "it" for more
+	fsd56wde-zenclass> it
+	[
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f994c'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('664376e6331cba0c2d9f993a')
+	  },
+	  {
+	    _id: ObjectId('664379fc331cba0c2d9f994d'),
+	    mentor_id: ObjectId('664363a9331cba0c2d9f9913'),
+	    mentee_id: ObjectId('664376e6331cba0c2d9f993b')
+	  }
+	]
+	
+
+codekata problems
+
+	fsd56wde-zenclass> db.codekata_problems.find()
+	[
+	  {
+	    _id: ObjectId('6643640e331cba0c2d9f9914'),
+	    title: 'Two Sum Problem',
+	    description: 'Find two numbers that add up to a specific target.',
+	    difficulty: 'easy',
+	    date_added: ISODate('2023-09-25T08:00:00.000Z')
+	  },
+	  {
+	    _id: ObjectId('6643734d331cba0c2d9f9922'),
+	    user_id: ObjectId('66435f9a331cba0c2d9f990a'),
+	    solved: true
+	  },
+	  {
+	    _id: ObjectId('6643734d331cba0c2d9f9923'),
+	    user_id: ObjectId('66436f80331cba0c2d9f991a'),
+	    solved: true
+	  },
+	  {
+	    _id: ObjectId('6643734d331cba0c2d9f9924'),
+	    user_id: ObjectId('66436f80331cba0c2d9f991b'),
+	    solved: true
+	  },
+	  {
+	    _id: ObjectId('6643734d331cba0c2d9f9925'),
+	    user_id: ObjectId('66436f9b331cba0c2d9f991d'),
+	    solved: false
+	  },
+	  {
+	    _id: ObjectId('6643734d331cba0c2d9f9926'),
+	    user_id: ObjectId('66436f9b331cba0c2d9f991c'),
+	    solved: false
+	  }
+	]
+	
+	Mentees
+	
+	fsd56wde-zenclass> db.mentees.find()
+	[
+	  {
+	    _id: ObjectId('664374dd331cba0c2d9f9927'),
+	    name: 'mentee1',
+	    email: 'mentee1@gmail.com',
+	    age: 25
+	  },
+	  {
+	    _id: ObjectId('664374dd331cba0c2d9f9928'),
+	    name: 'mentee2',
+	    email: 'mentee2@gmail.com',
+	    age: 28
+	  },
+	  {
+	    _id: ObjectId('664374dd331cba0c2d9f9929'),
+	    name: 'mentee3',
+	    email: 'mentee3@gmail.com',
+	    age: 23
+	  },
+	  {
+	    _id: ObjectId('66437659331cba0c2d9f992d'),
+	    name: 'mentee5',
+	    email: 'mentee5@gmail.com',
+	    age: 25
+	  },
+	  {
+	    _id: ObjectId('66437659331cba0c2d9f992e'),
+	    name: 'mentee5',
+	    email: 'mentee5@gmail.com',
+	    age: 28
+	  },
+	  {
+	    _id: ObjectId('66437659331cba0c2d9f992f'),
+	    name: 'mentee4',
+	    email: 'mentee4@gmail.com',
+	    age: 23
+	  },
+	  {
+	    _id: ObjectId('66437683331cba0c2d9f9930'),
+	    name: 'mentee8',
+	    email: 'mentee8@gmail.com',
+	    age: 25
+	  },
+	  {
+	    _id: ObjectId('66437683331cba0c2d9f9931'),
+	    name: 'mentee7',
+	    email: 'mentee7@gmail.com',
+	    age: 28
+	  },
+	  {
+	    _id: ObjectId('66437683331cba0c2d9f9932'),
+	    name: 'mentee6',
+	    email: 'mentee6@gmail.com',
+	    age: 23
+	  },
+	  {
+	    _id: ObjectId('664376a2331cba0c2d9f9933'),
+	    name: 'mentee11',
+	    email: 'mentee11@gmail.com',
+	    age: 25
+	  },
+	  {
+	    _id: ObjectId('664376a2331cba0c2d9f9934'),
+	    name: 'mentee10',
+	    email: 'mentee10@gmail.com',
+	    age: 28
+	  },
+	  {
+	    _id: ObjectId('664376a2331cba0c2d9f9935'),
+	    name: 'mentee9',
+	    email: 'mentee9@gmail.com',
+	    age: 23
+	  },
+	  {
+	    _id: ObjectId('664376c6331cba0c2d9f9936'),
+	    name: 'mentee14',
+	    email: 'mentee14@gmail.com',
+	    age: 25
+	  },
+	  {
+	    _id: ObjectId('664376c6331cba0c2d9f9937'),
+	    name: 'mentee13',
+	    email: 'mentee13@gmail.com',
+	    age: 28
+	  },
+	  {
+	    _id: ObjectId('664376c6331cba0c2d9f9938'),
+	    name: 'mentee12',
+	    email: 'mentee12@gmail.com',
+	    age: 23
+	  },
+	  {
+	    _id: ObjectId('664376e6331cba0c2d9f9939'),
+	    name: 'mentee17',
+	    email: 'mentee17@gmail.com',
+	    age: 25
+	  },
+	  {
+	    _id: ObjectId('664376e6331cba0c2d9f993a'),
+	    name: 'mentee16',
+	    email: 'mentee16@gmail.com',
+	    age: 28
+	  },
+	  {
+	    _id: ObjectId('664376e6331cba0c2d9f993b'),
+	    name: 'mentee15',
+	    email: 'mentee15@gmail.com',
+	    age: 23
+	  }
+	]
+	
+
+	1. Find all the tasks and topics which are taught in the month of October
+	fsd56wde-zenclass> db.topics.find({date:{$gte:ISODate('2023-10-01T00:00:00Z'),$lte:ISODate('2023-10-31T23:59:59Z')}})
+	
+	
+	[
+	  {
+	    _id: ObjectId('664361d9331cba0c2d9f990e'),
+	    title: 'Introduction to MongoDB',
+	    description: 'Basics of MongoDB',
+	    date: ISODate('2023-10-05T08:00:00.000Z'),
+	    mentor_id: ObjectId('605c72dfbb7a9d1d88fbd8b8')
+	  },
+	  {
+	    _id: ObjectId('664361d9331cba0c2d9f990f'),
+	    title: 'Advanced MongoDB',
+	    description: 'Advanced concepts of MongoDB',
+	    date: ISODate('2023-10-20T08:00:00.000Z'),
+	    mentor_id: ObjectId('605c72dfbb7a9d1d88fbd8b8')
+	  }
+	]
+	
+	
+	fsd56wde-zenclass> db.tasks.find({due_date:{$gte:ISODate('2023-10-01T00:00:00Z'),$lte:ISODate('2023-10-31T23:59:59Z')}})
+	[
+	  {
+	    _id: ObjectId('66436307331cba0c2d9f9910'),
+	    title: 'MongoDB CRUD Operations',
+	    description: 'Tasks related to MongoDB CRUD operations',
+	    due_date: ISODate('2023-10-15T08:00:00.000Z'),
+	    assigned_to: ObjectId('605c72dfbb7a9d1d88fbd8b7'),
+	    status: 'completed'
+	  },
+	  {
+	    _id: ObjectId('66436307331cba0c2d9f9911'),
+	    title: 'Aggregation Framework',
+	    description: 'Tasks related to MongoDB Aggregation Framework',
+	    due_date: ISODate('2023-10-25T08:00:00.000Z'),
+	    assigned_to: ObjectId('605c72dfbb7a9d1d88fbd8b7'),
+	    status: 'pending'
+	  }
+	]
+	
+	
+	2. Find all the company drives which appeared between 15 oct-2020 and 31-0ct-2020
+		fsd56wde-zenclass> db.company_drives.find({drive_date: {$gte:ISODate('2020-10-15T00:00:00Z'),$lte:ISODate('2020-10-31T23:59:59Z')}})
+		
+		
+		[
+		  {
+		    _id: ObjectId('6643685a331cba0c2d9f9915'),
+		    company_name: 'Tech Innovators',
+		    drive_date: ISODate('2020-10-16T10:00:00.000Z'),
+		    positions: [ 'Software Engineer', 'Data Scientist' ],
+		    location: 'San Francisco, CA'
+		  },
+		  {
+		    _id: ObjectId('6643685a331cba0c2d9f9916'),
+		    company_name: 'Future Solutions',
+		    drive_date: ISODate('2020-10-20T09:00:00.000Z'),
+		    positions: [ 'DevOps Engineer', 'System Administrator' ],
+		    location: 'New York, NY'
+		  },
+		  {
+		    _id: ObjectId('6643685a331cba0c2d9f9917'),
+		    company_name: 'AI Pioneers',
+		    drive_date: ISODate('2020-10-25T11:00:00.000Z'),
+		    positions: [ 'Machine Learning Engineer', 'AI Researcher' ],
+		    location: 'Boston, MA'
+		  },
+		  {
+		    _id: ObjectId('6643685a331cba0c2d9f9918'),
+		    company_name: 'Web Creators',
+		    drive_date: ISODate('2020-10-30T14:00:00.000Z'),
+		    positions: [ 'Frontend Developer', 'Backend Developer' ],
+		    location: 'Seattle, WA'
+		  }
+		]
+	3. Find all the company drives and students who are appeared for placement
+
+fsd56wde-zenclass> db.attendance.aggregate([{$match: {status: "present"}},{$lookup: {from: "users",localField: "user_id",foreignField: "_id",as:"student"}},{$unwind: "$student"}])
+		[
+		  {
+		    _id: ObjectId('66436099331cba0c2d9f990c'),
+		    user_id: ObjectId('66435f9a331cba0c2d9f990a'),
+		    date: ISODate('2023-10-10T08:00:00.000Z'),
+		    status: 'present',
+		    student: {
+		      _id: ObjectId('66435f9a331cba0c2d9f990a'),
+		      name: 'Haritha',
+		      email: 'haritha@gmail.com',
+		      role: 'student'
+		    }
+		  },
+		  {
+		    _id: ObjectId('6643708b331cba0c2d9f991e'),
+		    user_id: ObjectId('66436f80331cba0c2d9f991a'),
+		    drive_date: ISODate('2023-10-16T10:00:00.000Z'),
+		    status: 'present',
+		    student: {
+		      _id: ObjectId('66436f80331cba0c2d9f991a'),
+		      name: 'stu2',
+		      email: 'stu2@gmail.com',
+		      role: 'student'
+		    }
+		  },
+		  {
+		    _id: ObjectId('6643708b331cba0c2d9f9920'),
+		    user_id: ObjectId('66436f9b331cba0c2d9f991c'),
+		    drive_date: ISODate('2023-10-20T09:00:00.000Z'),
+		    status: 'present',
+		    student: {
+		      _id: ObjectId('66436f9b331cba0c2d9f991c'),
+		      name: 'stu4',
+		      email: 'stu4@gmail.com',
+		      role: 'student'
+		    }
+		  },
+		  {
+		    _id: ObjectId('6643708b331cba0c2d9f9921'),
+		    user_id: ObjectId('66436f9b331cba0c2d9f991c'),
+		    drive_date: ISODate('2023-10-20T09:00:00.000Z'),
+		    status: 'present',
+		    student: {
+		      _id: ObjectId('66436f9b331cba0c2d9f991c'),
+		      name: 'stu4',
+		      email: 'stu4@gmail.com',
+		      role: 'student'
+		    }
+		  }
+		]
+	4. Find the number of problems solved by the user in codekata
+
+fsd56wde-zenclass> db.codekata_problems.aggregate([{$lookup: {from: "users",localField: "user_id",foreignField: "_id",as: "user"}},{$unwind: "$user"},{$group: {_id: "$user_id",user_name: { $first: "$user.name" },problems_solved: {$sum: {$cond: { if: "$solved", then: 1, else: 0 }}}}}])
+		
+		[
+		  {
+		    _id: ObjectId('66436f9b331cba0c2d9f991c'),
+		    user_name: 'stu4',
+		    problems_solved: 0
+		  },
+		  {
+		    _id: ObjectId('66436f80331cba0c2d9f991b'),
+		    user_name: 'stu1',
+		    problems_solved: 1
+		  },
+		  {
+		    _id: ObjectId('66435f9a331cba0c2d9f990a'),
+		    user_name: 'Haritha',
+		    problems_solved: 1
+		  },
+		  {
+		    _id: ObjectId('66436f9b331cba0c2d9f991d'),
+		    user_name: 'stu3',
+		    problems_solved: 0
+		  },
+		  {
+		    _id: ObjectId('66436f80331cba0c2d9f991a'),
+		    user_name: 'stu2',
+		    problems_solved: 1
+		  }
+		]
+	5. Find all the mentors with who has the mentee's count more than 15
+	
+		fsd56wde-zenclass> db.mentors.aggregate([{$group: {_id: "$mentor_id",mentees_count: { $sum: 1 }}},{$match: {mentees_count: { $gt: 15 }}}])
+		
+		[ { _id: ObjectId('664363a9331cba0c2d9f9913'), mentees_count: 16 } ]
+		
+	6. Find the number of users who are absent and task is not submitted between 15-oct-2020 and 31-oct-2020
+		fsd56wde-zenclass> db.attendance.aggregate([{$match: {date: { $gte:  ISODate('2020-10-15'), $lte: ISODate('2020-10-31') },status: "absent"}},{$lookup: {from: "tasks",localField: "user_id",foreignField: "user_id",as: "tasks"}},{$match: {"tasks": { $elemMatch: { due_date: { $gte: ISODate('2020-10-15'), $lte:ISODate('2020-10-31') }, submitted: false } }}}])
+		[
+		  {
+		    _id: ObjectId('66437d6b331cba0c2d9f994e'),
+		    user_id: ObjectId('66436f80331cba0c2d9f991a'),
+		    date: ISODate('2020-10-15T00:00:00.000Z'),
+		    status: 'absent',
+		    tasks: [
+		      {
+		        _id: ObjectId('66437df2331cba0c2d9f9950'),
+		        user_id: ObjectId('66436f80331cba0c2d9f991a'),
+		        due_date: ISODate('2020-10-20T00:00:00.000Z'),
+		        submitted: false
+		      }
+		    ]
+		  },
+		  {
+		    _id: ObjectId('66437d6b331cba0c2d9f994f'),
+		    user_id: ObjectId('66436f9b331cba0c2d9f991d'),
+		    date: ISODate('2020-10-20T00:00:00.000Z'),
+		    status: 'absent',
+		    tasks: [
+		      {
+		        _id: ObjectId('66437df2331cba0c2d9f9951'),
+		        user_id: ObjectId('66436f9b331cba0c2d9f991d'),
+		        due_date: ISODate('2020-10-25T00:00:00.000Z'),
+		        submitted: false
+		      }
+		    ]
+		  }
+		]
+		Count
+		
+		fsd56wde-zenclass> db.attendance.aggregate([{$match: {date: { $gte:  ISODate('2020-10-15'), $lte: ISODate('2020-10-31') },status: "absent"}},{$lookup: {from: "tasks",localField: "user_id",foreignField: "user_id",as: "tasks"}},{$match: {"tasks": { $elemMatch: { due_date: { $gte: ISODate('2020-10-15'), $lte:ISODate('2020-10-31') }, submitted: false } }}},{$group: {_id: null,count: { $sum: 1 }}}])
+		
+		[ { _id: null, count: 2 } ]
+		
